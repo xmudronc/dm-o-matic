@@ -1,47 +1,51 @@
-<div class="controls">
-  aiming
-  <div>
-    <form (change)="aimRadioChange($event)">
-      <input type="radio" name="location" data="0" value="Random|0" checked> Random<br>
-      <br>
-      <input type="radio" name="location" value="Head|1"> Head<br>
-      <input type="radio" name="location" value="Torso|2"> Torso<br>
-      <br>
-      <input [disabled]="this.humanoidAim" type="radio" name="location" value="R.Arm|5"> R.Arm<br>
-      <input [disabled]="this.humanoidAim" type="radio" name="location" value="L.Arm|6"> L.Arm<br>
-      <input [disabled]="this.specterAim" type="radio" name="location" value="R.Leg|7"> R.Leg<br>
-      <input [disabled]="this.specterAim" type="radio" name="location" value="L.Leg|9"> L.Leg<br>
-      <br>
-      <input [disabled]="this.monsterAim" type="radio" name="location" value="R.Limb|6"> R.Limb<br>
-      <input [disabled]="this.monsterAim" type="radio" name="location" value="L.Limb|8"> L.Limb<br>
-      <input [disabled]="this.monsterAim" type="radio" name="location" value="Tail.or.Wings|10"> Tail or Wings
-    </form>
+<div class="container">
+  <div class="controls-left">
+    aiming
+    <div>
+      <form (change)="aimRadioChange($event)">
+        <input type="radio" name="location" data="0" value="Random|0" checked> Random<br>
+        <br>
+        <input type="radio" name="location" value="Head|1"> Head<br>
+        <input type="radio" name="location" value="Torso|2"> Torso<br>
+        <br>
+        <input [disabled]="this.humanoidAim" type="radio" name="location" value="R.Arm|5"> R.Arm<br>
+        <input [disabled]="this.humanoidAim" type="radio" name="location" value="L.Arm|6"> L.Arm<br>
+        <input [disabled]="this.specterAim" type="radio" name="location" value="R.Leg|7"> R.Leg<br>
+        <input [disabled]="this.specterAim" type="radio" name="location" value="L.Leg|9"> L.Leg<br>
+        <br>
+        <input [disabled]="this.monsterAim" type="radio" name="location" value="R.Limb|6"> R.Limb<br>
+        <input [disabled]="this.monsterAim" type="radio" name="location" value="L.Limb|8"> L.Limb<br>
+        <input [disabled]="this.monsterAim" type="radio" name="location" value="Tail.or.Wings|10"> Tail or Wings
+      </form>
+    </div>
   </div>
 
-  <br>attack
-  <div>
-    <input id="atk" type="number">
+  <div class="controls-right">
+    <br>attack
+    <div>
+      <input id="atk" type="number">
+    </div>
+
+    <br>defence
+    <div>
+      <input id="def" type="number">
+    </div>
+
+    <br>enemy
+    <div>
+      <form (change)="enemyRadioChange($event)">
+        <input [disabled]="this.humanoidSelected" type="radio" name="enemy" value="0" checked> Humanoid<br>
+        <input [disabled]="this.monsterSelected" type="radio" name="enemy" value="1"> Monster<br>
+        <input [disabled]="this.specterSelected" type="radio" name="enemy" value="2"> Specter<br>
+        <input [disabled]="this.elementalSelected" type="radio" name="enemy" value="3"> Elemental
+      </form>
+    </div>
+
+    <br>
+    <button (click)="magic()">GO</button>
   </div>
 
-  <br>defence
-  <div>
-    <input id="def" type="number">
+  <div class="result">
+    
   </div>
-
-  <br>enemy
-  <div>
-    <form (change)="enemyRadioChange($event)">
-      <input [disabled]="this.humanoidSelected" type="radio" name="enemy" value="0" checked> Humanoid<br>
-      <input [disabled]="this.monsterSelected" type="radio" name="enemy" value="1"> Monster<br>
-      <input [disabled]="this.specterSelected" type="radio" name="enemy" value="2"> Specter<br>
-      <input [disabled]="this.elementalSelected" type="radio" name="enemy" value="3"> Elemental
-    </form>
-  </div>
-
-  <br>
-  <button (click)="magic()">GO</button>
-</div>
-
-<div class="result">
-  
 </div>

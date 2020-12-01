@@ -1,0 +1,29 @@
+.example-form-field {
+    width: 200px;
+  }
+
+  .controls {
+    width: 40%;
+  }
+
+  .result {
+    background-color: aqua;
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 40%;
+  }
+    
+  @media screen and (max-aspect-ratio: 1/1) {
+    .controls {
+        width: 100vw;
+      }
+    
+      .result {
+        background-color: aqua;
+        width: 100vw;
+        height: 100%;
+        position: relative;
+      }
+    }

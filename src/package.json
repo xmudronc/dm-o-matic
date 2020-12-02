@@ -1,0 +1,8 @@
+{
+    "name": "dm-o-matic",
+    "productName": "DM-O-MATIC",
+    "version": "1.0.0",
+    "description": "Angular CLI + Electron",
+    "main": "electron.prod.js",
+    "license": "MIT"
+}

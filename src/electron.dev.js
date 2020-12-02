@@ -13,7 +13,7 @@ const createWindow = () => {
         // Create the browser window.
         win = new BrowserWindow({
             width: 600,
-            height: 800,
+            height: 900,
             icon: './src/favicon.ico'
         });
 

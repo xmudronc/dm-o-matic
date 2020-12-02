@@ -120,6 +120,7 @@ export class AppComponent {
   }
 
   determineLocation(critDmg, target) {
+    let criElement = document.querySelector("#critdamage");
     let namElement = document.querySelector("#name");
     let effElement = document.querySelector("#effect");
     let staElement = document.querySelector("#stabilized");
@@ -162,12 +163,14 @@ export class AppComponent {
 
     if (crit.name !== undefined) {
       console.log("Crit:", crit);
+      criElement.innerHTML = critDmg.type + ", " + critDmg.damage + " to HP";
       namElement.innerHTML = crit.name;
       effElement.innerHTML = crit.effect;
       staElement.innerHTML = crit.stabilized;
       treElement.innerHTML = crit.treated;
     } else {
       console.log("Crit DMG bonus:", crit);
+      criElement.innerHTML = critDmg.type + ", " + critDmg.damage + " to HP";
       namElement.innerHTML = "Bonus Damage";
       effElement.innerHTML = crit;
       staElement.innerHTML = "-";

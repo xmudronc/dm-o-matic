@@ -1,48 +1,231 @@
+@import "./components/radio.scss";
+
 .example-form-field {
     width: 200px;
   }
-
-  .controls-left {
-    width: 20%;
+  
+  .label {
+    font-size: 1.2vw;
   }
 
-  .controls-right {
-    width: 20%;
+  p {
+    padding-left: 25px;
+  }
+
+  .p {
+    padding-left: 25px;
+    display: block;
+    margin-block-start: 1.2vw;
+    margin-block-end: 1.2vw;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .button {    
+    width: 25%;
+  }
+
+  .btn {
+    box-shadow: inset 0px 0px 15px 3px #000000;
+    background-color: transparent;
+    border-radius: 42px;
+    border: 1px solid #000000;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Trebuchet MS;
+    font-size: 1.2vw;
+    padding: 8px 31px;
+  }
+  
+  .btn:hover {
+    background-color: #00000081;
+  }
+
+  .btn:focus{
+    outline: none;
+  }
+
+  .inp {    
+    width: 30%;
+    text-align: center;
+  }
+
+  .inp::-webkit-outer-spin-button,
+  .inp::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://images6.alphacoders.com/714/714119.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .block {
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 25px;
+    margin: 20px;
+    box-shadow: black 0 0 20px 0px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .result-content {
+    padding: 25px;
+    overflow: scroll;
+    width: calc(100% - 25px - 25px);
+    height: calc(100% - 25px - 25px);
+    font-size: 1.2vw;
+  }
+
+  .result-content::-webkit-scrollbar {
+    display: none;
   }
 
   .result {
-    background-color: aqua;
-    width: 60%;
-    height: 100%;
-    top: 0px;
-    left: 40%;
+    width: 35vw;
+    height: 35vw;
   }
 
   .container {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: gainsboro;
   }
+
+  .controls-left {
+    padding: 25px;
+    padding-right: 12.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  .controls-right {
+    padding: 25px;
+    padding-left: 12.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  .controls {
+    width: 35vw;
+    height: 35vw;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .controls-content {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  @media screen and (max-aspect-ratio: 1/1) {
+
+    .background {
+      align-items: flex-start;
+      overflow: scroll;
+    }
+
+    .controls {
+      width: 70vw;
+      height: 70vw;
+    }
+
+    .result {
+      width: 70vw;
+      height: fit-content;
+    }
+
+    .result-content {
+      overflow: auto;
+      height: fit-content;
+      font-size: 1.4vh;
+    }
+
+    .btn {      
+      font-size: 1.4vh;
+    }
     
-  /*@media screen and (max-aspect-ratio: 1/1) {
+    .label {
+      font-size: 1.4vh;
+    }    
+  
+    .p {
+      margin-block-start: 1.4vh;
+      margin-block-end: 1.4vh;
+    }
+  }
+
+  @media screen and (max-aspect-ratio: 10/16) {
+
+    .background {
+      align-items: flex-start;
+      overflow: scroll;
+    }
+
     .controls-left {
-      width: 50%;
-      position: absolute;
-      top: 0px;
-      left: 0%;
+      width: calc(100% - 25px - 25px);
+      padding-bottom: 12.5px;
     }
   
     .controls-right {
-      width: 50%;
-      position: absolute;
-      top: 0px;
-      left: 50%;
+      width: calc(100% - 25px - 25px);
+      padding-top: 12.5px;
+    }
+
+    .controls {
+      width: 70vw;
+      height: fit-content;
+    }
+
+    .controls-content {      
+      flex-direction: column;
+    }
+
+    .result {
+      width: 70vw;
+      height: fit-content;
+    }
+
+    .result-content {
+      overflow: auto;
+      height: fit-content;
+      font-size: 1.4vh;
+    }
+
+    .button {
+      width: auto;
+    }
+
+    .btn {      
+      font-size: 1.4vh;
     }
     
-      .result {
-        background-color: aqua;
-        width: 100%;
-        height: 100vw;
-        position: relative;
-        top: 40%;
-        left: 0px;
-      }
-    }*/
+    .label {
+      font-size: 1.4vh;
+    }    
+  
+    .p {
+      margin-block-start: 1.4vh;
+      margin-block-end: 1.4vh;
+    }
+  }

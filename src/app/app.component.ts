@@ -26,14 +26,14 @@ export class AppComponent {
 
   getBodyPart(enemy) {
     let location: any = document.querySelector('input[name="location"]:checked');
-    let aimed = location.value == 0 ? false : true;
+    let aimed = location.value.split("|")[1] == 0 ? false : true;
     switch (enemy.type) {
       case Enemies.HUMANOID:
         return {
           aimed: aimed,
           type: Enemies.HUMANOID,
           bodyPart: aimed 
-            ? this.humanoid.getLocation(location.value) 
+            ? this.humanoid.getLocation(location.value.split("|")[1]) 
             : this.humanoid.getLocation(this.crits.roll("1d10"))
         }
       case Enemies.MONSTER:
@@ -41,7 +41,7 @@ export class AppComponent {
           aimed: aimed,
           type: Enemies.MONSTER,
           bodyPart: aimed 
-            ? this.monster.getLocation(location.value) 
+            ? this.monster.getLocation(location.value.split("|")[1]) 
             : this.monster.getLocation(this.crits.roll("1d10"))
         }
       case Enemies.SPECTER:
@@ -49,7 +49,7 @@ export class AppComponent {
           aimed: aimed,
           type: Enemies.SPECTER,
           bodyPart: aimed 
-            ? this.humanoid.getLocation(location.value) 
+            ? this.humanoid.getLocation(location.value.split("|")[1]) 
             : this.humanoid.getLocation(this.crits.roll("1d6"))
         }
       case Enemies.ELEMENTAL:
@@ -57,7 +57,7 @@ export class AppComponent {
           aimed: aimed,
           type: Enemies.ELEMENTAL,
           bodyPart: aimed 
-            ? this.humanoid.getLocation(location.value) 
+            ? this.humanoid.getLocation(location.value.split("|")[1]) 
             : this.humanoid.getLocation(this.crits.roll("1d10"))
         }
     }
@@ -120,6 +120,11 @@ export class AppComponent {
   }
 
   determineLocation(critDmg, target) {
+    let namElement = document.querySelector("#name");
+    let effElement = document.querySelector("#effect");
+    let staElement = document.querySelector("#stabilized");
+    let treElement = document.querySelector("#treated");
+
     let bodyPart = this.getBodyPart(target);
     console.log("Crit DMG to HP:", critDmg.damage);
 
@@ -157,8 +162,16 @@ export class AppComponent {
 
     if (crit.name !== undefined) {
       console.log("Crit:", crit);
+      namElement.innerHTML = crit.name;
+      effElement.innerHTML = crit.effect;
+      staElement.innerHTML = crit.stabilized;
+      treElement.innerHTML = crit.treated;
     } else {
       console.log("Crit DMG bonus:", crit);
+      namElement.innerHTML = "Bonus Damage";
+      effElement.innerHTML = crit;
+      staElement.innerHTML = "-";
+      treElement.innerHTML = "-";
     }
 
   }

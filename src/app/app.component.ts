@@ -78,7 +78,7 @@ export class AppComponent {
       this.determineCrit(CriticalWounds.COMPLEX, target);
     } else if (value >= 13 && value < 15) {
       this.determineCrit(CriticalWounds.DIFFICULT, target);
-    } else {
+    } else if (value >= 15) {
       this.determineCrit(CriticalWounds.DEADLY, target);
     }
   }
